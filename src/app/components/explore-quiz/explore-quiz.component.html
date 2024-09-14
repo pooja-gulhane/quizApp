@@ -1,0 +1,30 @@
+<div class="text-center mt-4 px-5 py-5">
+    <h1 style="color:#fcc822; font-weight: bold; font-size: 2.5rem;">
+      Explore, Compete, and Sharpen Your Skills!
+    </h1>
+    <p style="color:#333333; font-size: 1.2rem; margin-top: 20px;">
+     <strong>Unlock exciting quizzes designed to challenge your mind. Whether you're here to learn, compete, or just have fun, we've got something for everyone. Pick a quiz and see how you stack up against others!</strong>
+    </p>
+</div>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let quiz of quizs">
+      <div class="card mb-4 rounded-5 shadow-sm">
+        <img src="assets/Environment2.jpg" class="card-img-top rounded-5 p-3 w-100" alt="quiz">
+        <div class="card-body">
+          <h5 class="card-title text-center"><strong>{{quiz.quizName}}</strong></h5>
+          <p class="card-text text-center">
+            <strong>No. of Questions:</strong> {{quiz.quizNoOfQuestions}} <br>
+            <strong>Total Marks:</strong> {{quiz.quizTotalMarks}} <br>
+          </p>
+          <a  [routerLink]="['/quiz/rules', quiz.quizId]" class="btn btn-primary btn-block">Start Quiz</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+  

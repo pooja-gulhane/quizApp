@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ExploreQuizComponent } from './components/explore-quiz/explore-quiz.component';
+import { QuestionComponent } from './components/question/question.component';
+import { RulesComponent } from './components/rules/rules.component';
+import { ScoreComponent } from './components/score/score.component';
+import { HeroComponent } from './components/hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +21,19 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     NavbarComponent,
     SignInComponent,
-    SignUpComponent
+    SignUpComponent,
+    ExploreQuizComponent,
+    QuestionComponent,
+    RulesComponent,
+    ScoreComponent,
+    HeroComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

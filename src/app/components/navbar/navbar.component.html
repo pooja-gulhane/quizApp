@@ -1,6 +1,56 @@
-<nav class="navbar sticky-top navbar-expand-lg bg-warning navbar-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/">Quizzer</a>
+<nav class="navbar navbar-expand-lg bg-body-tertiary px-4">
+  <div  class="container-fluid">
+    <a class="navbar-brand"  routerLink="/">
+     <img src="assets/logo.png" alt="Logo" class="navbar-logo" width="170px" height="50px">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor04" aria-controls="navbarColor04" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor04">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/explore-quiz"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Quiz</a>
+        </li> 
+      </ul>
+      <ul class="navbar-nav mb-2 mb-lg-0" *ngIf="!authService.isLoggedIn">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/signin"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Sign In</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/signup"  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Sign Up</a>
+        </li>
+      </ul>
+
+      <ul class="nav nav-pills" *ngIf="authService.isLoggedIn">
+        <li class="nav-item dropdown">
+          <a class="nav-link text-Secondary" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <img src="assets/user.png" alt="Profile" class="profile-logo" width="40px" height="40px">
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">My Profile</a>
+            <a class="dropdown-item" href="#">Quiz History</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Logout</a>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav> 
+
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid px-7">
+      <a class="navbar-brand" routerLink="/">
+        <img src="assets/logo.png" alt="Logo" class="navbar-logo">
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -20,4 +70,4 @@
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> -->

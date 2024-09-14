@@ -1,0 +1,22 @@
+.navbar{
+    padding-bottom: 0.2rem;
+    /* border-bottom: 1px solid rgb(213, 213, 213);  */
+}
+.navbar-logo{
+    padding: 0%;
+    margin: 0%;
+}
+
+.collapse{
+    margin-left: 10px;
+}
+
+.nav-link{
+    margin-left: 20px;
+    color: gray;
+}
+
+.active {
+    font-weight: bold;
+  }
+

@@ -1,0 +1,19 @@
+.alert{
+    border: 2px solid red; 
+    background-color: white;
+    color: red;
+}
+
+.custom-close {
+    color: red;
+    opacity: 1; /* Ensures the color is not faded */
+}
+  
+.custom-close:hover {
+    color: darkred; /* Darker red on hover */
+}
+
+.alert button{
+    color: red;
+}
+

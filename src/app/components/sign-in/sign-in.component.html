@@ -1,4 +1,56 @@
-<div class="container">
+<div class="container mt-5">
+    <div class="row">
+      <!-- Left side: Image -->
+      <div class="col-md-6">
+        <img src="assets/signup-image.jpg" class="img-fluid" alt="Sign Up">
+        <!-- <img src="https://via.placeholder.com/500x500" alt="Placeholder Image" class="img-fluid"> -->
+      </div>
+  
+      <!-- Right side: Sign In Form -->
+      <div class="col-md-6">
+        <p class="display-4 my-2 py-3">Sign In</p>
+        <hr>
+        <form [formGroup]="signInForm" (ngSubmit)="signInSubmit()">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" formControlName="email">
+            <div *ngIf="signInForm.get('email')?.invalid && signInForm.get('email')?.touched" class="text-danger">
+              <span *ngIf="signInForm.get('email')?.errors?.['required']">Email can't be empty.</span>
+              <span *ngIf="signInForm.get('email')?.errors?.['email']">Please enter a valid email.</span>
+              <span *ngIf="email.dirty && email.errors?.['incorrectEmailFormat']">{{email.errors?.['incorrectEmailFormat'].msg}}</span>
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" formControlName="password">
+            <div *ngIf="signInForm.get('password')?.invalid && signInForm.get('password')?.touched" class="text-danger">
+              <span *ngIf="signInForm.get('password')?.errors?.['required']">Password can't be empty.</span>
+              <span *ngIf="signInForm.get('password')?.errors?.['minlength']">Password must have at least 8 characters.</span>
+              <span *ngIf="password.dirty && password.errors?.['incorrectPasswordFormat']">{{password.errors?.['incorrectPasswordFormat'].msg}}</span>
+            </div>
+          </div>
+           <button type="submit" class="btn btn-primary" [disabled]="signInForm.invalid">Submit</button> 
+        </form>
+
+        <!-- <div class="alert alert-danger mt-2" *ngIf="authService.errorFlag" role="alert">
+          Invalid Credentials!
+        </div> -->
+
+        <div class="alert alert-dismissible mt-2" *ngIf="authService.errorFlag">
+          <!-- <button type="button" class="btn-alert btn-close btn-danger custom-close" data-bs-dismiss="alert"></button> -->
+          <!-- <button type="button" id="btn-alert" class="btn-close" data-bs-dismiss="alert"></button> -->
+          <button class="btn-close p-3" data-bs-dismiss="alert"><i class="bi bi-x-lg"></i></button>
+          <strong>Oh snap!</strong> Invalid Credentials!
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+<!-- <div class="container">
     <p class="display-4 my-2 py-3">
         Sign In
     </p>
@@ -24,4 +76,4 @@
         </div>
         <button type="submit" class="btn btn-primary" [disabled]="signInForm.pristine || signInForm.invalid">Submit</button>
     </form>
-</div>
+</div> -->
