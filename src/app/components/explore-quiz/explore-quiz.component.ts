@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { QuizService } from 'src/app/services/quiz-service/quiz.service';
-import { quiz } from 'src/app/models/quiz';
+import { QuizDetail } from 'src/app/models/quiz';
 
 @Component({
   selector: 'app-explore-quiz',

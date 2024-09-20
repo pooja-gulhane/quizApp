@@ -1,0 +1,60 @@
+<div class="testimonial">
+  <div class="container">
+    <div class="container__left">
+      <!-- <img src="assets/Home2.png"> -->
+      <h1>Read what our customers love about us</h1>
+      <p>
+        Over 200 companies from diverse sectors consult us to enhance the user
+        experience of their products and services.
+      </p>
+      <p>
+        We have helped companies increase their customer base and generate
+        multifold revenue with our service.
+      </p>
+      <button>Read our success stories</button>
+    </div>
+    <div class="container__right">
+      <div class="card" *ngFor="let testimonial of testimonials">
+        <img [src]="testimonial.img" [alt]="testimonial.name" />
+        <div class="card__content">
+          <div class="card__details">
+            <p><span><i class="bi bi-quote"></i></span> {{ testimonial.message }}</p>
+            <h4>- {{ testimonial.name }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="testimonial">
+  <div class="container">
+    <div class="container__left">
+      <h1>Read what our customers love about us</h1>
+      <p>
+        Over 200 companies from diverse sectors consult us to enhance the user
+        experience of their products and services.
+      </p>
+      <p>
+        We have helped companies increase their customer base and generate
+        multifold revenue with our service.
+      </p>
+      <button>Read our success stories</button>
+    </div>
+    <div class="container__right">
+      <div class="card" *ngFor="let testimonial of testimonials">
+        <img [src]="testimonial.img" [alt]="testimonial.name" />
+        <div class="card__content">
+          <div class="card__details">
+            <p><span><i class="bi bi-quote"></i></span> {{ testimonial.message }}</p>
+            <h4>- {{ testimonial.name }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ -->

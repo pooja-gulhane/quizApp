@@ -1,1 +1,9 @@
-<p>score</p>
+<div class="score-container d-flex flex-column align-items-center justify-content-center text-center">
+  <img src="assets/score.svg" class="score-img mb-4" alt="Score Icon">
+  
+  <h1 class="quiz-completed-title mb-3">Quiz Completed!</h1>
+  
+  <p class="score-text mb-4">Your Score: <span class="score-value">{{ score }}</span></p>
+  
+  <a routerLink="/explore-quiz" class="btn btn-primary explore-btn">Explore More Quizzes</a>
+</div>

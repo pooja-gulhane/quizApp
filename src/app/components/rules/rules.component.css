@@ -1,0 +1,109 @@
+
+  .container {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card h2 {
+    color: #2f4156;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li {
+    margin-bottom: 1.2rem;
+    padding-left: 2.5rem;
+    position: relative;
+    font-size: 1.1rem;
+  }
+  
+  ul li::before {
+    content: "\2022"; /* Bullet point */
+    color: #2f4156;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+  }
+  
+  .btn-success {
+    background-color: #567C8D;
+    color: white;
+  }
+  
+  .btn-success:hover {
+    background-color: #ffffff;
+    color: #567C8D;
+    border: 1px solid #567C8D;
+  }
+  
+  .btn-danger {
+    background-color: white;
+    color:#567C8D;
+    border: 1px solid #567C8D
+  }
+  
+  .btn-danger:hover {
+    background-color:#567C8D;
+    color:  white;
+    border: 1px solid #567C8D;
+  }
+  
+  .ms-2 {
+    margin-left: 1rem;
+  }
+  
+  .card ul li {
+    line-height: 1.5;
+    color: #555;
+  }
+  
+  .card ul li strong {
+    color: #2c3e50;
+  }
+  
+  .card ul li:hover {
+    color: #2c3e50;
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      padding: 2rem;
+    }
+  
+    ul li {
+      font-size: 1rem;
+    }
+  
+    button {
+      font-size: 0.9rem;
+    }
+  }
+   

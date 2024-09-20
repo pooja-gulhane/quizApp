@@ -14,6 +14,7 @@ export class SignInComponent{
   email: FormControl
   password: FormControl
   signInForm: FormGroup
+  signinSuccess :boolean = false
 
   constructor(public authService: AuthService) {
 
@@ -35,6 +36,9 @@ export class SignInComponent{
     }
     this.authService.loginUser(userCredentials).subscribe(response => {
       console.log(response)
+      this.signinSuccess = true;
+      this.signInForm.reset();
+      this.signInForm.markAsPristine();  
     })
   }
 }

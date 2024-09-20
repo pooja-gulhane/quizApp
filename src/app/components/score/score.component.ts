@@ -1,16 +1,22 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ScoreService } from 'src/app/services/score-service/score.service';
 
 @Component({
   selector: 'app-score',
   templateUrl: './score.component.html',
   styleUrls: ['./score.component.css']
 })
-export class ScoreComponent {
+export class ScoreComponent implements OnInit {
+  score: number = 0;
+
+  constructor(private scoreService: ScoreService) {}
+
   ngOnInit(): void {
-    const state = window.history.state as { score: number };
-    if (state) {
-      const score = state.score;
-      console.log(score);
-    }
+    // Subscribe to score changes
+    this.scoreService.score$.subscribe(score => {
+      this.score = score;
+    });
   }
 }
+

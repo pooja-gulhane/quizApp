@@ -1,6 +1,92 @@
 <div class="container mt-4">
-    <div class="row">
+  <div class="row">
       <!-- Question Description on the left side -->
+      <div class="col-md-6">
+          <div class="card mb-3 question-card">
+              <div class="card-body">
+                  <h5 class="card-title">{{ questions[currentQuestionIndex]?.questionDescription }}</h5>
+              </div>
+          </div>
+      </div>
+
+      <!-- Answer Options on the right side (separate boxes for each option) -->
+      <div class="col-md-6" *ngIf="!(questions[currentQuestionIndex]?.questionOption1 === 'null')">
+          <div class="row mb-3">
+              <!-- Option A -->
+              <div class="col-md-12">
+                  <div class="card option-card" (click)="selectAnswer(questions[currentQuestionIndex]?.questionOption1)">
+                      <div class="card-body">
+                          <div class="d-flex align-items-center">
+                              <span class="option-label">A.</span>
+                              <input class="form-check-input me-2" type="radio" name="answer" [value]="questions[currentQuestionIndex]?.questionOption1" [(ngModel)]="selectedAnswer">
+                              <label class="form-check-label">{{ questions[currentQuestionIndex]?.questionOption1 }}</label>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Option B -->
+              <div class="col-md-12" *ngIf="!(questions[currentQuestionIndex]?.questionOption2 === 'null')">
+                  <div class="card option-card" (click)="selectAnswer(questions[currentQuestionIndex]?.questionOption2)">
+                      <div class="card-body">
+                          <div class="d-flex align-items-center">
+                              <span class="option-label">B.</span>
+                              <input class="form-check-input me-2" type="radio" name="answer" [value]="questions[currentQuestionIndex]?.questionOption2" [(ngModel)]="selectedAnswer">
+                              <label class="form-check-label">{{ questions[currentQuestionIndex]?.questionOption2 }}</label>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Option C -->
+              <div class="col-md-12" *ngIf="!(questions[currentQuestionIndex]?.questionOption3 === 'null')">
+                  <div class="card option-card" (click)="selectAnswer(questions[currentQuestionIndex]?.questionOption3)">
+                      <div class="card-body">
+                          <div class="d-flex align-items-center">
+                              <span class="option-label">C.</span>
+                              <input class="form-check-input me-2" type="radio" name="answer" [value]="questions[currentQuestionIndex]?.questionOption3" [(ngModel)]="selectedAnswer">
+                              <label class="form-check-label">{{ questions[currentQuestionIndex]?.questionOption3 }}</label>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Option D -->
+              <div class="col-md-12" *ngIf="!(questions[currentQuestionIndex]?.questionOption4 === 'null')">
+                  <div class="card option-card" (click)="selectAnswer(questions[currentQuestionIndex]?.questionOption4)">
+                      <div class="card-body">
+                          <div class="d-flex align-items-center">
+                              <span class="option-label">D.</span>
+                              <input class="form-check-input me-2" type="radio" name="answer" [value]="questions[currentQuestionIndex]?.questionOption4" [(ngModel)]="selectedAnswer">
+                              <label class="form-check-label">{{ questions[currentQuestionIndex]?.questionOption4 }}</label>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Navigation buttons at the bottom -->
+  <div class="d-flex justify-content-between mt-4">
+    <button class="btn custom-btn-prev" (click)="onPrevious(currentQuestionIndex)" [disabled]="currentQuestionIndex === 0">Previous</button>
+    <button class="btn custom-btn-next" (click)="onNext(currentQuestionIndex)" [disabled]="currentQuestionIndex === questions.length - 1">Next</button>
+  </div>
+
+  <!-- Submit Button centered routerLink="/score/quizId"-->
+  <div class="text-center mt-4">
+    <button class="btn custom-btn-submit"  (click)="submitQuiz(currentQuestionIndex)">Submit</button>
+  </div>
+
+</div>
+
+
+
+
+
+<!-- <div class="container mt-4">
+    <div class="row">
+      
       <div class="col-md-6">
         <div class="card mb-3">
           <div class="card-body">
@@ -9,7 +95,7 @@
         </div>
       </div>
       
-      <!-- Answer Options on the right side -->
+      
       <div class="col-md-6">
         <div class="card mb-3">
           <div class="card-body">
@@ -36,15 +122,13 @@
       </div>
     </div>
     
-    <!-- Navigation buttons at the bottom -->
     <div class="d-flex justify-content-between mt-4">
       <button class="btn btn-secondary" (click)="onPrevious(currentQuestionIndex)" [disabled]="currentQuestionIndex === 0">Previous</button>
       <button class="btn btn-primary" (click)="onNext(currentQuestionIndex)" [disabled]="currentQuestionIndex === questions.length - 1">Next</button>
     </div>
   
-    <!-- Submit Button centered -->
     <div class="text-center mt-4">
       <button class="btn btn-success" routerLink="/score/quizId" (click)="onSubmit()">Submit</button>
     </div>
   </div>
-  
+   -->

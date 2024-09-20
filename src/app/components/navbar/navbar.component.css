@@ -1,5 +1,6 @@
 .navbar{
     padding-bottom: 0.2rem;
+    background-color: #F5EFEB;
     /* border-bottom: 1px solid rgb(213, 213, 213);  */
 }
 .navbar-logo{
@@ -13,7 +14,18 @@
 
 .nav-link{
     margin-left: 20px;
-    color: gray;
+    color: #2f4156;
+    transition: transform .2s;
+}
+
+.nav-link img{
+    border-radius: 30px;
+}
+
+.nav-link:hover{
+    transform: scale(1.2);
+    
+    color: #567c8d;
 }
 
 .active {

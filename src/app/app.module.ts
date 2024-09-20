@@ -14,6 +14,12 @@ import { QuestionComponent } from './components/question/question.component';
 import { RulesComponent } from './components/rules/rules.component';
 import { ScoreComponent } from './components/score/score.component';
 import { HeroComponent } from './components/hero/hero.component';
+import { TestimonialsComponent } from './components/testimonials/testimonials.component';
+import { QuizHistoryComponent } from './components/quiz-history/quiz-history.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { UserResponseHistoryComponent } from './components/user-response-history/user-response-history.component';
+import { FeaturesComponent } from './components/features/features.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +33,12 @@ import { HeroComponent } from './components/hero/hero.component';
     RulesComponent,
     ScoreComponent,
     HeroComponent,
+    TestimonialsComponent,
+    QuizHistoryComponent,
+    UserProfileComponent,
+    UserResponseHistoryComponent,
+    FeaturesComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

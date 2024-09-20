@@ -1,0 +1,138 @@
+
+/* .container{
+  padding-top: 6rem;
+}
+
+
+.card {
+  border-radius: 15px;
+  
+}
+
+.question-text {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #343a40;
+}
+
+.option {
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.correct-answer {
+  background-color: #d4edda; 
+  color: #155724;           
+  border-left: 5px solid #28a745; 
+}
+
+.incorrect-answer {
+  background-color: #f8d7da; 
+  color: #721c24;           
+  border-left: 5px solid #dc3545; 
+}
+
+.highlighted-option {
+  background-color: #cfe2ff; 
+  color: #28a745;           
+  border-left: 5px solid #28a745; 
+}
+
+.container {
+  max-width: 800px;
+}
+
+.option {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-primary {
+  color: #2F4156  !important;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+.shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+ */
+
+ .container {
+  padding-top: 6rem;
+}
+
+.card {
+  border-radius: 15px;
+}
+
+.question-text {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #343a40;
+}
+
+.option {
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Correct/Incorrect badge styling */
+.badge {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.bg-success {
+  background-color: #28a745 !important;
+}
+
+.bg-danger {
+  background-color: #dc3545 !important;
+}
+
+/* Option styles */
+.correct-answer {
+  background-color: #d4edda;
+  color: #155724;
+  border-left: 5px solid #28a745;
+}
+
+.incorrect-answer {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-left: 5px solid #dc3545;
+}
+
+.highlighted-option {
+  background-color: #cfe2ff;
+  color: #28a745;
+  border-left: 5px solid #28a745;
+}
+
+.option {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-primary {
+  color: #2F4156 !important;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+.shadow-lg {
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+/* Answer status position */
+.answer-status {
+  font-size: 1.25rem;
+  font-weight: bold;
+}

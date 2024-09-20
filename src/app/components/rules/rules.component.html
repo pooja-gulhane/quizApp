@@ -1,16 +1,17 @@
-<div class="container mt-4" style="max-width: 700px; margin: 0 auto;">
+<!-- <div class="container mt-4" style="max-width: 700px; margin: 0 auto; padding: 8rem 0rem 5rem 0rem;">
     <div class="card rounded-5 shadow-sm p-4">
-      <h2 class="text-center mb-4" style="color:#fcc822;">Quiz Rules</h2>
+      <h2 class="text-center mb-4" style="color:#2c3e50;">Quiz Rules</h2>
       <ul>
         <li>There is no negative marking for incorrect answers.</li>
-        <li>You must answer all questions within the given time limit.</li>
         <li>Once you submit the quiz, you cannot change your answers.</li>
         <li>All questions are mandatory, and you cannot skip any questions.</li>
-        <li>Each quiz is time-bound. If you exceed the time limit, your answers will be auto-submitted.</li>
         <li>After the quiz, you will be able to see your score and review the correct answers.</li>
-        <li>If you exit the quiz mid-way, your progress will not be saved.</li>
+        <li>If you exit the quiz mid-way, your progress will be saved.</li>
         <li>Make sure you have a stable internet connection before starting the quiz.</li>
         <li>All results are final once submitted, and no appeals will be entertained.</li>
+        <li>Ensure your browser's pop-up blocker is turned off for a smooth experience.</li>
+        <li>Ensure you are in a distraction-free environment while taking the quiz.</li>
+        <li>In case of technical difficulties, reach out to support immediately.</li>
       </ul>
   
       <div class="text-center mt-4">
@@ -18,5 +19,37 @@
         <button class="btn btn-danger ms-2" (click)="cancel()">Cancel</button>
       </div>
     </div>
+  </div> -->
+
+  <div class="container mt-4" style="max-width: 700px; margin: 0 auto; padding: 6rem 0rem 5rem 0rem;">
+    <div class="card rounded-5 shadow-sm p-4" style="position: relative;">
+      
+      <!-- Title with fixed position at the top -->
+      <h2 class="text-center mb-4" style="color:#2c3e50; position: sticky; top: 0; background-color: white; z-index: 10; padding: 10px 0;">
+        Quiz Rules
+      </h2>
+      
+      <!-- Scrollable list of rules -->
+      <ul style="max-height: 300px; overflow-y: auto; padding-right: 15px;">
+        <li>There is no negative marking for incorrect answers.</li>
+        <li>Once you submit the quiz, you cannot change your answers.</li>
+        <li>All questions are mandatory, and you cannot skip any questions.</li>
+        <li>After the quiz, you will be able to see your score and review the correct answers.</li>
+        <li>If you exit the quiz mid-way, your progress will be saved.</li>
+        <li>Make sure you have a stable internet connection before starting the quiz.</li>
+        <li>All results are final once submitted, and no appeals will be entertained.</li>
+        <li>Ensure your browser's pop-up blocker is turned off for a smooth experience.</li>
+        <li>Ensure you are in a distraction-free environment while taking the quiz.</li>
+        <li>In case of technical difficulties, reach out to support immediately.</li>
+      </ul>
+      
+      <!-- Fixed button section at the bottom -->
+      <div class="text-center mt-4" style="position: sticky; bottom: 0; background-color: white; padding-top: 10px; padding-bottom: 10px;">
+        <button class="btn btn-success" (click)="startQuiz()">I Agree</button>
+        <button class="btn btn-danger ms-2" (click)="cancel()">Cancel</button>
+      </div>
+      
+    </div>
   </div>
+  
   

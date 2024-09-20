@@ -8,7 +8,9 @@ import { HomeComponent } from './components/home/home.component';
 import { QuestionComponent } from './components/question/question.component';
 import { RulesComponent } from './components/rules/rules.component';
 import { ScoreComponent } from './components/score/score.component';
-
+import { QuizHistoryComponent } from './components/quiz-history/quiz-history.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { UserResponseHistoryComponent } from './components/user-response-history/user-response-history.component';
 
 const routes: Routes = [
   {
@@ -38,6 +40,16 @@ const routes: Routes = [
   {
     path:"score/:quizId",
     component:ScoreComponent
+  },
+  {
+    path: 'quiz-history', 
+    component: QuizHistoryComponent 
+  },{
+    path: 'profile',
+    component: UserProfileComponent 
+  },{
+    path: 'user-response-history/:quizId/:userId'
+    , component: UserResponseHistoryComponent
   }
 ];
 

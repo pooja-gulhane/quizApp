@@ -5,6 +5,7 @@ import { validateEmail } from 'src/app/validators/email-validator';
 import { validatePassword } from 'src/app/validators/password-validator';
 import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/services/auth-service/auth.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -19,7 +20,10 @@ export class SignUpComponent {
 
   signUpForm: FormGroup;
 
-  constructor(public http: HttpClient, public authService: AuthService) {
+  signupSuccess: boolean = false;
+  countdown: number = 5;
+  
+  constructor(public http: HttpClient, public authService: AuthService,public router: Router) {
     this.firstName = new FormControl('', [Validators.required])
     this.lastName = new FormControl('', [Validators.required])
     this.email = new FormControl('', [Validators.required, validateEmail()])
@@ -43,8 +47,22 @@ export class SignUpComponent {
     console.log(this.signUpForm.value)
     console.log(user)
     this.authService.register(user);
+    this.signupSuccess = true;
+
     this.signUpForm.reset();
     this.signUpForm.markAsPristine();
+
+
+     // Start the countdown and redirect after 5 seconds
+     const intervalId = setInterval(() => {
+      this.countdown--;
+
+      if (this.countdown === 0) {
+        clearInterval(intervalId); // Clear interval after countdown ends
+        this.router.navigate(['/signin']); // Redirect to the sign-in page
+      }
+    }, 1000); 
+
   }
 
   // signUpSubmit() {

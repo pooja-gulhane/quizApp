@@ -1,3 +1,17 @@
+/* .container{
+    padding-top: 6rem;
+} */
+
+
+.right-side{
+    padding-top: 6rem;
+}
+
+
+/* .right-side{
+    background-image: url('/assets/file.png');
+} */
+
 .alert{
     border: 2px solid red; 
     background-color: white;
@@ -17,3 +31,20 @@
     color: red;
 }
 
+.success-message {
+    text-align: center;
+    font-size: 1rem;
+    color: #2f4156;
+    background-color: #c8d9e6;
+    padding-top: 10px;
+    border: 1px solid #2f4156;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  .explore-link {
+    font-weight: bold;
+    color: #2f4156;
+    text-decoration: underline;
+    cursor: pointer;
+  }

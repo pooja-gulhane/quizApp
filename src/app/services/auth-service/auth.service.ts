@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { tap } from 'rxjs';
 import { User } from 'src/app/models/user';
 import { UserCredentials } from 'src/app/models/user-credentials';
@@ -58,5 +58,20 @@ export class AuthService {
         return throwError(error)
       })
     );
+  }
+
+  getRequestHeaders(): any {
+    var userObj = localStorage.getItem('currentUser')
+    if(userObj !== null) {
+      const user = JSON.parse(userObj)
+      return new HttpHeaders().set('Authorization', `Bearer ${user.jwt}`);
+    }
+  }
+
+   // Logout method
+   logout(): void {
+    localStorage.removeItem('currentUser'); // Remove user data from local storage
+    this.isLoggedIn = false; // Update the login state
+    this.userProfile = new UserResponse(); // Reset the user profile
   }
 }
