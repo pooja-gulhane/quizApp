@@ -1,45 +1,62 @@
-/* .container{
-    padding-top: 6rem;
-} */
-
-
-.right-side{
+.container{
+    padding:0rem;
     padding-top: 6rem;
 }
 
-
-/* .right-side{
-    background-image: url('/assets/file.png');
-} */
-
-.alert{
-    border: 2px solid red; 
-    background-color: white;
-    color: red;
+.right-side {
+    padding-top: 3rem;
 }
 
-.custom-close {
-    color: red;
-    opacity: 1; /* Ensures the color is not faded */
-}
+.form-box {
+    background-color: #fff;
+    padding:1rem 1.5rem 1rem 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
   
-.custom-close:hover {
-    color: darkred; /* Darker red on hover */
-}
-
-.alert button{
-    color: red;
-}
-
-.success-message {
+  .form-box p {
+    font-weight: 600;
+    color: #2f4156;
+  }
+  
+  .form-box hr {
+    border-top: 1px solid #ddd;
+  }
+  
+  .form-box .form-control {
+    border-radius: 5px;
+  }
+  
+  .form-box button {
+    cursor: pointer;
+    background-color: #2F4156 ;
+    color: #ffffff;
+    border-color: #2F4156 ;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-box button:hover {
+    background-color: #192b3f ;
+  }
+  
+  .form-box .text-danger {
+    font-size: 0.9rem;
+  }
+  
+  /* Styling for the success message */
+  .success-message {
     text-align: center;
     font-size: 1rem;
     color: #2f4156;
     background-color: #c8d9e6;
-    padding-top: 10px;
+    padding: 10px;
     border: 1px solid #2f4156;
     border-radius: 5px;
     margin-top: 20px;
+  }
+
+  .doNotHaveAccount{
+    padding: 15px 0px 0px 0px;
   }
   
   .explore-link {
@@ -48,3 +65,17 @@
     text-decoration: underline;
     cursor: pointer;
   }
+
+  .alert button{
+    color: red;
+}
+
+.alert{
+    border: 2px solid red; 
+    background-color: white;
+    color: red;
+}
+
+
+
+  

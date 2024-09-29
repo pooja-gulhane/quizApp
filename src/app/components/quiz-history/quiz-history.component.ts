@@ -14,8 +14,12 @@ export class QuizHistoryComponent implements OnInit {
 
   ngOnInit(): void {
     // Assuming you get the user's ID from AuthService
-    const userId = this.authService.userProfile.userDTO.applicationUserId;
+    let userId = this.authService.userProfile.userDTO.applicationUserId;
     console.log(userId);
+
+    if(userId === 0) {
+      userId = 602
+    }
     // Fetch quiz history data from the service
     this.quizHistoryService.getQuizHistory(userId).subscribe(
       (data) => {

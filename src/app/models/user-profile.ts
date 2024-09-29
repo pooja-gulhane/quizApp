@@ -1,13 +1,15 @@
 export class UserProfile {
     applicationUserId: number
-    applicationUserName: string
+    applicationUserFirstName: string
+    applicationUserLastName:string
     applicationUserEmail: string
     applicationUserPassword: string
     applicationUserRole: string;
 
     constructor() {
         this.applicationUserId = 0,
-        this.applicationUserName = ''
+        this.applicationUserFirstName = ''
+        this.applicationUserLastName =''
         this.applicationUserEmail = ''
         this.applicationUserPassword = ''
         this.applicationUserRole = ''

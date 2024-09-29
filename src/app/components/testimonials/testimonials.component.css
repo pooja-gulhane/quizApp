@@ -1,9 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
 
-body {
-  font-family: "Roboto", sans-serif;
-}
+
 
 .testimonial{
   background-image: url('src/assets/Landing.png');
@@ -16,7 +14,7 @@ body {
 .container {
   max-width: 1400px;
   padding-left: 2rem;
-  padding-top: 3rem;
+  padding-top: 2rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10rem;
@@ -39,7 +37,7 @@ body {
 
 .container__left p {
   color: var(--text-dark);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .container__left button {

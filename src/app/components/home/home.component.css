@@ -1,0 +1,10 @@
+.gif-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  img {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+  }

@@ -1,22 +1,27 @@
 .quiz-history-container {
   padding:7rem 2rem 2rem 2rem;
-  border-radius: 10px; /* Rounded corners for the container */
-  max-width: 900px; /* Limit width for better centering */
-  margin: auto; /* Center the container */
+  border-radius: 10px; 
+  max-width: 900px; 
+  margin: auto; 
+}
+
+.quiz-history-container h2{
+  font-weight: bold;
+  color: #2F4156;
 }
 
 .row {
   display: flex;
-  justify-content: center; /* Center row contents */
+  justify-content: center; 
 }
 .card {
-  border-radius: 10px; /* Rounded corners for cards */
-  transition: transform 0.2s; /* Animation for hover effect */
+  border-radius: 10px; 
+  transition: transform 0.2s; 
 }
 
 .card:hover {
-  transform: translateY(-5px); /* Slight lift on hover */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+  transform: translateY(-5px); 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
 }
 
 .quiz-info {
@@ -24,29 +29,29 @@
 }
 
 .card-title {
-  font-size: 1.5rem; /* Larger title size */
+  font-size: 1.5rem; 
   font-weight: bold;
-  color: #343a40; /* Dark color for text */
+  color: #343a40; 
 }
 
 .quiz-link {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit color from parent */
+  text-decoration: none; 
+  color: inherit; 
 }
 
 .quiz-link:hover {
-  text-decoration: underline; /* Underline on hover for link */
-  color: #007bff; /* Change color on hover */
+  text-decoration: underline; 
+  color: #007bff; 
 }
 
 .card-text {
-  font-size: 1.1rem; /* Slightly larger text */
-  color: #495057; /* Darker gray for text */
+  font-size: 1.1rem; 
+  color: #495057;
 }
 
 .trophy-icon {
   flex-shrink: 0; 
-  color: #ffc107; /* Gold color for the trophy icon */
+  color: #ffc107; 
 }
 
 .shadow-sm {
@@ -57,7 +62,7 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  /* width: 20%; */
+
   margin-left: 10px;
   animation: slideUp 1s ease-out forwards;
 }
@@ -66,46 +71,16 @@
   width: 19%;
 }
 
-/* Keyframes for sliding up animation */
 @keyframes slideUp {
   from {
-    transform: translateY(100%); /* Start from below the screen */
-    opacity: 0; /* Start invisible */
+    transform: translateY(100%);
+    opacity: 0; 
   }
   to {
-    transform: translateY(0); /* End at the final position */
-    opacity: 1; /* Fully visible */
+    transform: translateY(0); 
+    opacity: 1;
   }
 }
 
 
-/* .patch img{
-  width:20%;
-  margin-left: 10px;
-} */
 
-/* .quiz-history-container {
-    padding: 2rem;
-  }
-  
-  .quiz-info {
-    flex: 1;
-  }
-  
-  .card {
-    border-radius: 10px;
-  }
-  
-  .card-title {
-    font-size: 1.25rem;
-    font-weight: bold;
-  }
-  
-  .card-text {
-    font-size: 1rem;
-  }
-  
-  .shadow-sm {
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  }
-   */

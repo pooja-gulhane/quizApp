@@ -21,7 +21,7 @@ export class SignUpComponent {
   signUpForm: FormGroup;
 
   signupSuccess: boolean = false;
-  countdown: number = 5;
+  countdown: number = 3;
   
   constructor(public http: HttpClient, public authService: AuthService,public router: Router) {
     this.firstName = new FormControl('', [Validators.required])

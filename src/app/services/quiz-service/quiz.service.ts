@@ -20,9 +20,28 @@ export class QuizService {
     return this.http.get<any>(apiUrl, {headers}).pipe(
       map(response => {
         if(response) {
+          console.log(response)
           return {data: response}
         } else {
           throw new Error('No Quizzes Found')
+        }
+      }),
+      catchError(error => {
+        return throwError(error);
+      })
+    );
+  }
+
+   getQuizDetails(quizId: number): Observable<any> {
+    const apiUrl = `http://localhost:8080/quiz/${quizId}`;
+    const headers = this.authService.getRequestHeaders();
+    return this.http.get<any>(apiUrl, { headers }).pipe(
+      map(response => {
+        console.log(response)
+        if (response) {
+          return response;
+        } else {
+          throw new Error('Quiz not found');
         }
       }),
       catchError(error => {

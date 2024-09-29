@@ -1,26 +1,22 @@
-<div class="container mt-5">
+<!-- <div class="container mt-5">
   <div class="row">
-    <!-- Left side: Form -->
     <div class="col-md-6">
-      <!-- <p class="display-5">Welcome!</p> -->
+      <div class="form-box">
       <p class="display-4 my-2 py-2">Sign up</p>
       <hr>
       <form [formGroup]="signUpForm" (ngSubmit)="signUpSubmit()">
-        <!-- First Name -->
         <div class="mb-3">
           <label for="firstName" class="form-label">First Name</label>
           <input type="text" id="firstName" class="form-control" [formControl]="firstName">
           <span  class="text-danger" *ngIf="firstName.dirty && firstName.errors?.['required']">First Name can't be empty</span>
         </div>
 
-        <!-- Last Name -->
         <div class="mb-3">
           <label for="lastName" class="form-label">Last Name</label>
           <input type="text" id="lastName" class="form-control" [formControl]="lastName">
           <span  class="text-danger" *ngIf="lastName.dirty && lastName.errors?.['required']">Last Name can't be empty</span>
         </div>
 
-        <!-- Email -->
         <div class="mb-3">
           <label for="email" class="form-label">Email</label>
           <input type="email" id="email" class="form-control" [formControl]="email">
@@ -30,7 +26,6 @@
           </div>
         </div>
 
-        <!-- Password -->
         <div class="mb-3">
           <label for="password" class="form-label">Password</label>
           <input type="password" id="password" class="form-control" [formControl]="password">
@@ -41,22 +36,80 @@
           </div>
         </div>
 
-        <!-- Submit Button -->
         <button type="submit" class="btn btn-primary" [disabled]="signUpForm.pristine || (signUpForm.dirty && signUpForm.invalid)">Submit</button>
       </form>
-
+    </div>
       <div *ngIf="signupSuccess" class="success-message">
         <p><strong>Sign up successful! Redirecting to sign in page in {{ countdown }} seconds...</strong></p>
       </div>
     </div>
 
 
-    <!-- Right side: Image (optional) -->
     <div class="col-md-6 d-flex align-items-center">
-      <img src="assets/signup-image.jpg" class="img-fluid" alt="Sign Up">
-      <!-- <img src="https://via.placeholder.com/500x500" alt="Placeholder Image" class="img-fluid"> -->
+      <img src="assets/sign_up.png" class="img-fluid" alt="Sign Up">
     </div>
   </div>
 </div>
 
+ -->
+
+ <div class="container mt-5">
+  <div class="row">
+    <!-- Left side: Card with Form -->
+    <div class="col-md-6">
+      <div class="card form-box p-4">
+        <p class="display-4 my-2 py-2">Sign up</p>
+        <hr>
+        <form [formGroup]="signUpForm" (ngSubmit)="signUpSubmit()">
+          <!-- First Name -->
+          <div class="mb-3">
+            <label for="firstName" class="form-label">First Name</label>
+            <input type="text" id="firstName" class="form-control" [formControl]="firstName">
+            <span class="text-danger" *ngIf="firstName.dirty && firstName.errors?.['required']">First Name can't be empty</span>
+          </div>
+
+          <!-- Last Name -->
+          <div class="mb-3">
+            <label for="lastName" class="form-label">Last Name</label>
+            <input type="text" id="lastName" class="form-control" [formControl]="lastName">
+            <span class="text-danger" *ngIf="lastName.dirty && lastName.errors?.['required']">Last Name can't be empty</span>
+          </div>
+
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-control" [formControl]="email">
+            <div *ngIf="signUpForm.get('email')?.invalid && signUpForm.get('email')?.touched" class="text-danger">
+              <span *ngIf="signUpForm.get('email')?.errors?.['required']">Email is required.</span>
+              <span *ngIf="email.dirty && email.errors?.['incorrectEmailFormat']">{{email.errors?.['incorrectEmailFormat'].msg}}</span>
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" class="form-control" [formControl]="password">
+            <div *ngIf="signUpForm.get('password')?.invalid && signUpForm.get('password')?.touched" class="text-danger">
+              <span *ngIf="signUpForm.get('password')?.errors?.['required']">Password is required.</span>
+              <span *ngIf="signUpForm.get('password')?.errors?.['minlength']">Password must be at least 8 characters.</span>
+              <span *ngIf="password.dirty && password.errors?.['incorrectPasswordFormat']">{{password.errors?.['incorrectPasswordFormat'].msg}}</span>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary" [disabled]="signUpForm.pristine || (signUpForm.dirty && signUpForm.invalid)">Submit</button>
+        </form>
+      </div>
+          <!-- Success Message  -->
+      <div class="success-message mt-3"  *ngIf="signupSuccess">
+        <p><strong>Sign up successful! Redirecting to sign in page in {{ countdown }} seconds...</strong></p>
+      </div>
+    </div>
+
+    <!-- Right side: Image assets/signup_women.png  -->
+    <div class="col-md-6 d-flex align-items-center">
+      <img src="assets/file_sign.png" class="img-fluid" alt="Sign Up">
+    </div>
+  </div>
+</div>
 

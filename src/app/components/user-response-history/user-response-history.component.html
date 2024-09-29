@@ -1,121 +1,68 @@
 <div class="container mt-5">
-  <h2 class="text-center text-primary mb-4" style="color: text-primary; font-weight: 700;">Quiz Response</h2>
-  
-  <div *ngFor="let response of userResponses" class="card mb-4 shadow-lg">
-    <div class="card-body d-flex align-items-start">
-      <!-- Display whether the answer was correct or incorrect -->
-      <!-- <div class="answer-status me-3">
+  <div id="pdfContent">
+    <h2 class="text-center text-primary mb-4" style="color: text-primary; font-weight: 700;">Quiz Response</h2>
+
+    <div *ngFor="let response of userResponses" class="card mb-4 shadow-lg">
+      <div class="card-body d-flex align-items-start">
+        <!-- Display whether the answer was correct or incorrect -->
+        <!-- <div class="answer-status me-3">
         <span *ngIf="response.isCorrect" class="badge bg-success">Correct</span>
         <span *ngIf="!response.isCorrect" class="badge bg-danger">Incorrect</span>
       </div> -->
 
-      <div class="flex-grow-1">
-        <h5 class="question-text mb-4">{{ response.question.questionDescription }}</h5>
-        
-        <div class="options-container">
-          <!-- Option 1 -->
-          <div class="option mb-3 px-3 py-2 rounded"
-               [ngClass]="{
+        <div class="flex-grow-1">
+          <h5 class="question-text mb-4">{{ response.question.questionDescription }}</h5>
+
+          <div class="options-container">
+            <!-- Option 1 -->
+            <div class="option mb-3 px-3 py-2 rounded"  *ngIf="!(response.question.questionOption1 === 'null')" [ngClass]="{
                    'correct-answer': response.question.questionOption1 === response.question.questionCorrectAns && !response.isCorrect,
                    'incorrect-answer': response.question.questionOption1 === response.userResponseAns && !response.isCorrect,
                    'highlighted-option': response.question.questionOption1 === response.userResponseAns && response.isCorrect
                }">
-            <strong>{{ response.question.questionOption1 }}</strong>
-          </div>
-  
-          <!-- Option 2 -->
-          <div class="option mb-3 px-3 py-2 rounded"
-               [ngClass]="{
+              <strong>{{ response.question.questionOption1 }}</strong>
+            </div>
+
+            <!-- Option 2 -->
+            <div class="option mb-3 px-3 py-2 rounded" *ngIf="!(response.question.questionOption2 === 'null')" [ngClass]="{
                    'correct-answer': response.question.questionOption2 === response.question.questionCorrectAns && !response.isCorrect,
                    'incorrect-answer': response.question.questionOption2 === response.userResponseAns && !response.isCorrect,
                    'highlighted-option': response.question.questionOption2 === response.userResponseAns && response.isCorrect
                }">
-            <strong>{{ response.question.questionOption2 }}</strong>
-          </div>
-  
-          <!-- Option 3 -->
-          <div class="option mb-3 px-3 py-2 rounded"
-               [ngClass]="{
+              <strong>{{ response.question.questionOption2 }}</strong>
+            </div>
+
+            <!-- Option 3 -->
+            <div class="option mb-3 px-3 py-2 rounded" *ngIf="!(response.question.questionOption3 === 'null')" [ngClass]="{
                    'correct-answer': response.question.questionOption3 === response.question.questionCorrectAns && !response.isCorrect,
                    'incorrect-answer': response.question.questionOption3 === response.userResponseAns && !response.isCorrect,
                    'highlighted-option': response.question.questionOption3 === response.userResponseAns && response.isCorrect
                }">
-            <strong>{{ response.question.questionOption3 }}</strong>
-          </div>
-  
-          <!-- Option 4 -->
-          <div class="option mb-3 px-3 py-2 rounded"
-               [ngClass]="{
+              <strong>{{ response.question.questionOption3 }}</strong>
+            </div>
+
+            <!-- Option 4 -->
+            <div class="option mb-3 px-3 py-2 rounded" *ngIf="!(response.question.questionOption4 === 'null')" [ngClass]="{
                    'correct-answer': response.question.questionOption4 === response.question.questionCorrectAns && !response.isCorrect,
                    'incorrect-answer': response.question.questionOption4 === response.userResponseAns && !response.isCorrect,
                    'highlighted-option': response.question.questionOption4 === response.userResponseAns && response.isCorrect
                }">
-            <strong>{{ response.question.questionOption4 }}</strong>
-          </div>
-          <div class="answer-status me-3">
-            <span *ngIf="response.isCorrect" class="badge bg-success">Correct</span>
-            <span *ngIf="!response.isCorrect" class="badge bg-danger">Incorrect</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <p *ngIf="userResponses.length === 0" class="text-center text-muted">No user responses found.</p>
-</div>
-
-
-<!-- <div class="container mt-5">
-    <h2 class="text-center text-primary mb-4">Quiz Response</h2>
-    
-    <div *ngFor="let response of userResponses" class="card mb-4 shadow-lg">
-      <div class="card-body">
-        <h5 class="question-text mb-4">{{ response.question.questionDescription }}</h5>
-        
-        <div class="options-container">
-           Option 1
-          <div class="option mb-3 px-3 py-2 rounded"
-               [ngClass]="{
-                   'correct-answer': response.question.questionOption1 === response.question.questionCorrectAns && !response.isCorrect,
-                   'incorrect-answer': response.question.questionOption1 === response.userResponseAns && !response.isCorrect,
-                   'highlighted-option': response.question.questionOption1 === response.userResponseAns && response.isCorrect
-               }">
-            <strong>{{ response.question.questionOption1 }}</strong>
-          </div>
-  
-           Option 2
-          <div class="option mb-3 px-3 py-2 rounded"
-               [ngClass]="{
-                   'correct-answer': response.question.questionOption2 === response.question.questionCorrectAns && !response.isCorrect,
-                   'incorrect-answer': response.question.questionOption2 === response.userResponseAns && !response.isCorrect,
-                   'highlighted-option': response.question.questionOption2 === response.userResponseAns && response.isCorrect
-               }">
-            <strong>{{ response.question.questionOption2 }}</strong>
-          </div>
-  
-           Option 3 
-          <div class="option mb-3 px-3 py-2 rounded"
-               [ngClass]="{
-                   'correct-answer': response.question.questionOption3 === response.question.questionCorrectAns && !response.isCorrect,
-                   'incorrect-answer': response.question.questionOption3 === response.userResponseAns && !response.isCorrect,
-                   'highlighted-option': response.question.questionOption3 === response.userResponseAns && response.isCorrect
-               }">
-            <strong>{{ response.question.questionOption3 }}</strong>
-          </div>
-  
-          Option 4 
-          <div class="option mb-3 px-3 py-2 rounded"
-               [ngClass]="{
-                   'correct-answer': response.question.questionOption4 === response.question.questionCorrectAns && !response.isCorrect,
-                   'incorrect-answer': response.question.questionOption4 === response.userResponseAns && !response.isCorrect,
-                   'highlighted-option': response.question.questionOption4 === response.userResponseAns && response.isCorrect
-               }">
-            <strong>{{ response.question.questionOption4 }}</strong>
+              <strong>{{ response.question.questionOption4 }}</strong>
+            </div>
+            <div class="answer-status me-3">
+              <span *ngIf="response.isCorrect" class="badge bg-success">Correct</span>
+              <span *ngIf="!response.isCorrect" class="badge bg-danger">Incorrect</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    
+
     <p *ngIf="userResponses.length === 0" class="text-center text-muted">No user responses found.</p>
+
   </div>
-   -->
+  <div class="download  mb-4">
+    <button class="btn btn-primary mt-4" (click)="generatePDF()">Download PDF</button>
+  </div>
+
+</div>

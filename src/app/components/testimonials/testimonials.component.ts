@@ -10,17 +10,17 @@ export class TestimonialsComponent  implements AfterViewInit{
   testimonials = [
     {
       img: 'assets/womanTest.png',
-      message: 'We had a great time collaborating with the Filament team. They have my high recommendation!',
+      message: 'QuizGrad made creating and managing quizzes incredibly easy. My students are more engaged than ever!',
       name: 'Marnus Stephen'
     },
     {
       img: 'assets/manTest.png',
-      message: "The team drastically improved our product's user experience & increased our business outreach.",
+      message: "This app transformed how I assess my students' progress. Highly recommended!",
       name: 'Andrew Jettpace'
     },
     {
       img: 'assets/womanTest2.png',
-      message: 'I absolutely loved working with the Filament team. Complete experts at what they do!',
+      message: 'The user-friendly interface and powerful features are a game-changer for both teachers and students.',
       name: 'Stacy Stone'
     }
   ];

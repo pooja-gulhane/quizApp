@@ -20,6 +20,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { UserResponseHistoryComponent } from './components/user-response-history/user-response-history.component';
 import { FeaturesComponent } from './components/features/features.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { TutorialComponent } from './components/tutorial/tutorial.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { FooterComponent } from './components/footer/footer.component';
     UserResponseHistoryComponent,
     FeaturesComponent,
     FooterComponent,
+    TutorialComponent,
   ],
   imports: [
     BrowserModule,

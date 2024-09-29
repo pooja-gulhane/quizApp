@@ -59,8 +59,8 @@
   }
   
   .btn-success:hover {
-    background-color: #ffffff;
-    color: #567C8D;
+    background-color:  #2e424b;
+    color:  white;
     border: 1px solid #567C8D;
   }
   
@@ -71,8 +71,8 @@
   }
   
   .btn-danger:hover {
-    background-color:#567C8D;
-    color:  white;
+    background-color: white;
+    color: #2e424b;
     border: 1px solid #567C8D;
   }
   

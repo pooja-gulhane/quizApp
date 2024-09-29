@@ -1,0 +1,21 @@
+.gif-container {
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+     /* This centers the entire content */
+     justify-content: center;
+     align-items: center;
+    background-color: #4d6b78;
+    padding: 0rem 0rem 3rem 0rem;
+}
+
+.gif-container .peak-image {
+    padding-left: 40rem;
+    height: 150px; /* Adjust size of peak1.png */
+    margin-bottom: 1rem;
+}
+
+.gif-container .gif-image {
+  
+    width: 850px; /* Set the width of the GIF */
+    height: auto;
+}

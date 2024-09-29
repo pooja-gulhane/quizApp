@@ -1,21 +1,20 @@
-/* .container {
-    padding-top: 20px;
-  }
-  
-  .card {
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .btn {
-    padding: 10px 20px;
-  } */
-
-
- 
 .container {
-    padding-top: 8rem;
+    padding-top: 5rem;
 }
+
+.timer {
+  margin-right: 5px; 
+}
+
+.timercontainer{
+  /* background-color:#2F4156 ; */
+  color:  #2F4156 ;
+  border-radius: 10px; 
+  font-size: 1.5rem;
+  margin-left: 66rem;
+  padding: 5px;
+}
+
 
 .card {
     border-radius: 12px;
@@ -152,3 +151,18 @@
   color: #567C8D; /* Text becomes background color */
   border: 2px solid #567C8D; /* Add border on hover */
 }
+
+.btn-disabled {
+  background-color: #d3d3d3; /* Light gray color */
+  color: #a9a9a9; /* Dark gray color */
+  cursor: not-allowed; /* Show not-allowed cursor */
+  border: 1px solid #a9a9a9; /* Optional: border color */
+}
+
+
+/****************/
+.question-index{
+  padding: 3px;
+  margin-left: 15px;
+}
+

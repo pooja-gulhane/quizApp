@@ -5,7 +5,7 @@
     margin-top: -60px; 
     background-color: #4d6b78;
     color: #f5efeb;
-    padding-bottom: 60px;
+    padding-bottom: 30px;
   }
   
   .left-part {
@@ -16,18 +16,10 @@
   
   .left-part img {
     width: 80%;
-
-    /* margin-left: 90px;
-    margin-top: 50px; */
-    /* height: auto;  */
-   
   }
   
   .left-part img {
-    /* width: 80%;*/
     margin-left: 60px;
-    /* height: 45rem; */
-   
     opacity: 0; /* Initially hidden */
     transform: translateX(-100%); /* Start off-screen to the left */
     transition: opacity 1.2s ease-in, transform 1.2s ease-out; /* Smooth transition */

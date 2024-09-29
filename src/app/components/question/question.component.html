@@ -1,18 +1,22 @@
 <div class="container mt-4">
-  <div class="row">
-      <!-- Question Description on the left side -->
+    <div class="col-md-12">
+        <p class="timercontainer"><span class="timer"><strong>Time Left: {{ minutes }}:{{ seconds | number: '2.0' }}</strong></span><i class="bi bi-alarm-fill"></i></p>
+    </div>
+    <div class="row">
+    <div class="question-index">
+      <span><strong>Question {{ currentQuestionIndex + 1 }} of {{ questions.length }}</strong></span>
+    </div>
       <div class="col-md-6">
           <div class="card mb-3 question-card">
-              <div class="card-body">
-                  <h5 class="card-title">{{ questions[currentQuestionIndex]?.questionDescription }}</h5>
-              </div>
-          </div>
+            <div class="card-body">
+            <!-- Display current question index and total number of questions -->
+            <h5 class="card-title">{{ questions[currentQuestionIndex]?.questionDescription }}</h5>
+        </div>
       </div>
+    </div>
 
-      <!-- Answer Options on the right side (separate boxes for each option) -->
-      <div class="col-md-6" *ngIf="!(questions[currentQuestionIndex]?.questionOption1 === 'null')">
+      <div class="col-md-6" id="option1" *ngIf="!(questions[currentQuestionIndex]?.questionOption1 === 'null')">
           <div class="row mb-3">
-              <!-- Option A -->
               <div class="col-md-12">
                   <div class="card option-card" (click)="selectAnswer(questions[currentQuestionIndex]?.questionOption1)">
                       <div class="card-body">
@@ -25,8 +29,7 @@
                   </div>
               </div>
 
-              <!-- Option B -->
-              <div class="col-md-12" *ngIf="!(questions[currentQuestionIndex]?.questionOption2 === 'null')">
+              <div class="col-md-12" id="option2" *ngIf="!(questions[currentQuestionIndex]?.questionOption2 === 'null')">
                   <div class="card option-card" (click)="selectAnswer(questions[currentQuestionIndex]?.questionOption2)">
                       <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -38,8 +41,7 @@
                   </div>
               </div>
 
-              <!-- Option C -->
-              <div class="col-md-12" *ngIf="!(questions[currentQuestionIndex]?.questionOption3 === 'null')">
+              <div class="col-md-12" id="option3" *ngIf="!(questions[currentQuestionIndex]?.questionOption3 === 'null')">
                   <div class="card option-card" (click)="selectAnswer(questions[currentQuestionIndex]?.questionOption3)">
                       <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -51,8 +53,7 @@
                   </div>
               </div>
 
-              <!-- Option D -->
-              <div class="col-md-12" *ngIf="!(questions[currentQuestionIndex]?.questionOption4 === 'null')">
+              <div class="col-md-12" id="option4" *ngIf="!(questions[currentQuestionIndex]?.questionOption4 === 'null')">
                   <div class="card option-card" (click)="selectAnswer(questions[currentQuestionIndex]?.questionOption4)">
                       <div class="card-body">
                           <div class="d-flex align-items-center">
@@ -67,68 +68,16 @@
       </div>
   </div>
 
-  <!-- Navigation buttons at the bottom -->
+  
+
   <div class="d-flex justify-content-between mt-4">
-    <button class="btn custom-btn-prev" (click)="onPrevious(currentQuestionIndex)" [disabled]="currentQuestionIndex === 0">Previous</button>
-    <button class="btn custom-btn-next" (click)="onNext(currentQuestionIndex)" [disabled]="currentQuestionIndex === questions.length - 1">Next</button>
+    <button class="btn custom-btn-prev" id ="previous" (click)="onPrevious(currentQuestionIndex)" [disabled]="currentQuestionIndex === 0" [ngClass]="{'btn-disabled': currentQuestionIndex === 0}">Previous</button>
+    <button class="btn custom-btn-next" id="next" (click)="onNext(currentQuestionIndex)" [disabled]="currentQuestionIndex === questions.length - 1"  [ngClass]="{'btn-disabled': currentQuestionIndex === questions.length - 1}">Next</button>
   </div>
 
-  <!-- Submit Button centered routerLink="/score/quizId"-->
   <div class="text-center mt-4">
-    <button class="btn custom-btn-submit"  (click)="submitQuiz(currentQuestionIndex)">Submit</button>
+    <button class="btn custom-btn-submit" id="quizSubmit"  (click)="submitQuiz(currentQuestionIndex)">Submit</button>
   </div>
 
 </div>
 
-
-
-
-
-<!-- <div class="container mt-4">
-    <div class="row">
-      
-      <div class="col-md-6">
-        <div class="card mb-3">
-          <div class="card-body">
-            <h5 class="card-title">{{ questions[currentQuestionIndex]?.questionDescription }}</h5>
-          </div>
-        </div>
-      </div>
-      
-      
-      <div class="col-md-6">
-        <div class="card mb-3">
-          <div class="card-body">
-            <form>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="answer" [value]="questions[currentQuestionIndex]?.questionOption1" [(ngModel)]="selectedAnswer">
-                <label class="form-check-label">{{ questions[currentQuestionIndex]?.questionOption1 }}</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="answer" [value]="questions[currentQuestionIndex]?.questionOption2" [(ngModel)]="selectedAnswer">
-                <label class="form-check-label">{{ questions[currentQuestionIndex]?.questionOption2 }}</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="answer" [value]="questions[currentQuestionIndex]?.questionOption3" [(ngModel)]="selectedAnswer">
-                <label class="form-check-label">{{ questions[currentQuestionIndex]?.questionOption3 }}</label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="answer" [value]="questions[currentQuestionIndex]?.questionOption4" [(ngModel)]="selectedAnswer">
-                <label class="form-check-label">{{ questions[currentQuestionIndex]?.questionOption4 }}</label>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="d-flex justify-content-between mt-4">
-      <button class="btn btn-secondary" (click)="onPrevious(currentQuestionIndex)" [disabled]="currentQuestionIndex === 0">Previous</button>
-      <button class="btn btn-primary" (click)="onNext(currentQuestionIndex)" [disabled]="currentQuestionIndex === questions.length - 1">Next</button>
-    </div>
-  
-    <div class="text-center mt-4">
-      <button class="btn btn-success" routerLink="/score/quizId" (click)="onSubmit()">Submit</button>
-    </div>
-  </div>
-   -->

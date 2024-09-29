@@ -1,4 +1,4 @@
-.success-message {
+/* .success-message {
     text-align: center;
     font-size: 1rem;
     color: #2f4156;
@@ -8,4 +8,44 @@
     border-radius: 5px;
     margin-top: 20px;
   }
+   */
+
+   .container{
+    padding-top: 5rem;
+   }
+
+   .form-box {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
   
+  .card {
+    border: none;
+  }
+  
+  .success-message {
+    text-align: center;
+    font-size: 1rem;
+    color: #2f4156;
+    padding: 10px;
+    background-color: #c8d9e6;
+    border: 1px solid #2f4156;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .p-4{
+  padding:1rem 1.5rem 1rem 1.5rem !important;
+  }
+
+  .col-md-6 img{
+    margin-left: 70px;
+    width:85%;
+  }
+
+  .card p{
+    font-weight: 600;
+    color: #2f4156;
+  }

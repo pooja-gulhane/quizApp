@@ -5,8 +5,10 @@
           <div class="card shadow-sm h-100 border-0">
               <div class="card-body d-flex flex-row align-items-center">
                   <div class="quiz-info flex-grow-1">
+                    <!-- {{quiz | json}} -->
+                      <!-- <img src="{{quiz.quiz.quizImage}}" class="card-img-top rounded-5 p-3 w-100" alt="quiz"> -->
                       <h5 class="card-title">
-                          <a [routerLink]="['/user-response-history', quiz.quiz.quizId, quiz.applicationUser.applicationUserId]" class="quiz-link">{{ quiz.quiz.quizName }}</a>
+                          <a id="quizHistory" [routerLink]="['/user-response-history', quiz.quiz.quizId, quiz.applicationUser.applicationUserId]" class="quiz-link">{{ quiz.quiz.quizName }}</a>
                       </h5>
                       <p class="card-text mb-1">
                           <strong>Score:</strong> {{ quiz.scoreValue }}<strong>/ {{ quiz.quiz.quizTotalMarks }}</strong>
@@ -30,30 +32,3 @@
   <img src="assets/Quiz_history.png">
 </div>
 
-
-<!-- <div class="quiz-history-container">
-    <h2 class="text-center">Quiz History</h2>
-    <div class="row">
-      <div *ngFor="let quiz of quizHistory" class="col-md-6 mb-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body d-flex flex-row align-items-center">
-            <div class="quiz-info">
-              <h5 class="card-title" ><a [routerLink]="['/user-response-history', quiz.quiz.quizId, quiz.applicationUser.applicationUserId]">{{ quiz.quiz.quizName }}</a></h5>
-              <p class="card-text mb-1">
-                <strong>Score:</strong> {{ quiz.scoreValue }}<strong>/ {{quiz.quiz.quizTotalMarks}}</strong>
-              </p>
-              <p class="card-text mb-1">
-                <strong>Date:</strong> {{ quiz.quizTakenDate | date: 'medium' }}
-              </p>
-            </div>
-            <div class="ms-auto">
-              <i class="fas fa-trophy fa-3x text-warning"></i> 
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    <p *ngIf="quizHistory.length === 0" class="text-center">No quizzes taken yet.</p>
-  </div>
-   -->

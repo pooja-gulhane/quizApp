@@ -1,5 +1,46 @@
-.heading p{
-  padding:0rem 8rem;
+
+.text{
+ padding-top: 7rem;
+ padding-bottom: 4rem;
+}
+
+
+.heading {
+  position: relative;
+  margin: 1rem 7rem 0rem 7rem;
+  background-image: url('src/assets/cream_background.svg'); 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 7rem;
+  border-radius: 15px;
+}
+
+
+.heading h1 {
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.heading p {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .heading h1 {
+    font-size: 2rem;
+  }
+
+  .heading p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
 }
 
 .card-body{
@@ -80,7 +121,7 @@
     opacity: 0.1;
   }
   .card-text{
-  padding-bottom: 60px;
+  padding-bottom: 40px;
   }
 
 }
@@ -89,22 +130,12 @@
   vertical-align: middle;
 }
 
-/* .accordion{
-  padding : 50px;
-  padding-top: 90px;
-  justify-content: center;
-  align-items: center;
-}
-
-.accordion h3{
-  padding-bottom: 30px;
-} */
-
 body {
   background-color: #F5EFEB; /* Beige background */
 }
 
 .accordion {
+  margin: 0rem 4rem;
   padding: 50px;
   padding-top: 90px;
   justify-content: center;
@@ -157,4 +188,23 @@ body {
 /* Box shadow effect for items on hover */
 .accordion-item:hover {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+}
+
+
+.welcome-banner {
+  border-radius: 10px;
+  padding: 20px;
+  color: #333;
+}
+
+.welcome-banner h2 {
+  padding-left: 6rem;
+  color: #2F4156;
+  font-weight: bold;
+}
+
+.welcome-banner p {
+  padding-left: 6rem;
+  color: #555;
+  font-size: 1rem;
 }

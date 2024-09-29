@@ -1,14 +1,15 @@
+
 <div class="container mt-5">
-    <div class="row">
-      <!-- Left side: Image -->
-      <div class="col-md-6">
-        <img src="assets/signup-image.jpg" class="img-fluid" alt="Sign Up">
-        <!-- <img src="https://via.placeholder.com/500x500" alt="Placeholder Image" class="img-fluid"> -->
-      </div>
-  
-      <!-- Right side: Sign In Form -->
-       
-      <div class="right-side col-md-6">
+  <div class="row">
+    <!-- Left side: Image -->
+    <div class="left-side col-md-6">
+      <img src="assets/sign_in.png" class="img-fluid" alt="Sign Up">
+      <!-- <img src="https://via.placeholder.com/500x500" alt="Placeholder Image" class="img-fluid"> -->
+    </div>
+
+    <!-- Right side: Sign In Form -->
+    <div class="right-side col-md-6">
+      <div class="form-box shadow">
         <p class="display-4 my-2 py-3">Sign In</p>
         <hr>
         <form [formGroup]="signInForm" (ngSubmit)="signInSubmit()">
@@ -21,7 +22,7 @@
               <span *ngIf="email.dirty && email.errors?.['incorrectEmailFormat']">{{email.errors?.['incorrectEmailFormat'].msg}}</span>
             </div>
           </div>
-  
+
           <div class="mb-3">
             <label for="password" class="form-label">Password</label>
             <input type="password" class="form-control" id="password" formControlName="password">
@@ -31,55 +32,15 @@
               <span *ngIf="password.dirty && password.errors?.['incorrectPasswordFormat']">{{password.errors?.['incorrectPasswordFormat'].msg}}</span>
             </div>
           </div>
-           <button type="submit" class="btn btn-primary" [disabled]="signInForm.invalid">Submit</button> 
+          <button type="submit" id="signin" class="btn" [disabled]="signInForm.invalid">Submit</button>
+          <p class="doNotHaveAccount">Do not have an Account? <a routerLink="/signup">Sign Up</a></p>
         </form>
-
-        <!-- <div class="alert alert-danger mt-2" *ngIf="authService.errorFlag" role="alert">
-          Invalid Credentials!
-        </div>  -->
-
-        <div *ngIf="signinSuccess" class="success-message">
-          <p>Sign in successful! You can now <a [routerLink]="['/explore-quiz']" class="explore-link">explore quizzes</a>.</p>
-        </div>
-        
-
-        <div class="alert alert-dismissible mt-2" *ngIf="authService.errorFlag">
-          <!-- <button type="button" class="btn-alert btn-close btn-danger custom-close" data-bs-dismiss="alert"></button> -->
-          <!-- <button type="button" id="btn-alert" class="btn-close" data-bs-dismiss="alert"></button> -->
-          <button class="btn-close p-3" data-bs-dismiss="alert"><i class="bi bi-x-lg"></i></button>
-          <strong>Oh snap!</strong> Invalid Credentials!
-        </div>
+      </div>
+      <!-- Error alert -->
+      <div class="alert alert-dismissible mt-2" *ngIf="authService.errorFlag">
+        <button class="btn-close p-3" data-bs-dismiss="alert"><i class="bi bi-x-lg"></i></button>
+        <strong>Oh snap!</strong> Invalid Credentials!
       </div>
     </div>
   </div>
-
-
-
-
-<!-- <div class="container">
-    <p class="display-4 my-2 py-3">
-        Sign In
-    </p>
-    <hr>
-    <form (ngSubmit)="signInSubmit(signInForm)" #signInForm="ngForm">
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
-            name="email" #email="ngModel" [(ngModel)]="user.email" required
-            >
-            <div id="emailError" class="form-text text-danger" *ngIf="email.dirty && email.invalid">Email can't be empty.</div>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1"
-            name="password" #password="ngModel" [(ngModel)]="user.password" required minlength="8"
-            >
-            <div *ngIf="password.dirty && password.errors">
-                <div id="passwordError" class="form-text text-danger" *ngIf="password.errors['required']">Password can't be empty.</div>
-                <div id="passwordError" class="form-text text-danger" *ngIf="password.errors['minlength']">Password must have at least 8 characters.</div>
-            </div>
-
-        </div>
-        <button type="submit" class="btn btn-primary" [disabled]="signInForm.pristine || signInForm.invalid">Submit</button>
-    </form>
-</div> -->
+</div>

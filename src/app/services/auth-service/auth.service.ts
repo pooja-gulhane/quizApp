@@ -5,6 +5,7 @@ import { User } from 'src/app/models/user';
 import { UserCredentials } from 'src/app/models/user-credentials';
 import { UserResponse } from 'src/app/models/user-response';
 import { catchError, map, Observable, throwError } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class AuthService {
     return false
   }
 
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpClient, public router: Router) {
     this.userProfile = new UserResponse()
     this.errorFlag = false
     this.isLoggedIn = false
@@ -42,11 +43,7 @@ export class AuthService {
         if(response) {
           Object.assign(this.userProfile, response)
           this.isLoggedIn = true
-          console.log(response)
-          var storedUser: any = {}
-          Object.assign(storedUser, response)
-          storedUser.password = user.userPassword
-          localStorage.setItem('currentUser', JSON.stringify(storedUser))
+          localStorage.setItem('currentUser', JSON.stringify(response.jwt))
           return {success: true, data: response}
         } else {
           throw new Error('Login Failed')
@@ -60,11 +57,25 @@ export class AuthService {
     );
   }
 
+  getLoggedInUser(): Observable<any> {
+    const headers = this.getRequestHeaders()
+    return this.http.get<any>("http://localhost:8080/users", {headers}).pipe(
+      map(response => {
+        return {data: response}
+      }),
+      catchError(error => {
+        this.router.navigateByUrl("/signin")
+        return throwError(error)
+      })
+    )
+
+  }
+
   getRequestHeaders(): any {
     var userObj = localStorage.getItem('currentUser')
     if(userObj !== null) {
-      const user = JSON.parse(userObj)
-      return new HttpHeaders().set('Authorization', `Bearer ${user.jwt}`);
+      const jwt = JSON.parse(userObj)
+      return new HttpHeaders().set('Authorization', `Bearer ${jwt}`);
     }
   }
 
