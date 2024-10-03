@@ -65,23 +65,5 @@ export class SignUpComponent {
 
   }
 
-  // signUpSubmit() {
-  //   if (this.signUpForm.valid) {
-  //     let user = {
-  //       applicationUserFirstName: this.signUpForm.value.firstName,
-  //       applicationUserLastName: this.signUpForm.value.lastName,
-  //       applicationUserEmail: this.signUpForm.value.email,
-  //       applicationUserPassword: this.signUpForm.value.password,
-  //     }
-
-  //     this.http.post<any>('http://localhost:8080/users/register', user).subscribe(res => {
-  //       console.log("======= RESPONSE ======");
-  //       console.log(res);
-  //       this.signUpForm.reset();
-  //       this.signUpForm.markAsPristine();
-  //     });
-  //   } else {
-  //     console.log('Form is invalid');
-  //   }
-  // }
 }
+

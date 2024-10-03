@@ -16,8 +16,6 @@ export class UserResponseHistoryComponent implements OnInit {
 
   // @ViewChild('responseHistory', { static: false }) responseHistory!: ElementRef;
 
-
-
   constructor(
     private route: ActivatedRoute,
     private userResponseService: UserResponseService

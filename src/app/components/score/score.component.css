@@ -1,6 +1,5 @@
-/* Full-height container to center the content vertically and horizontally */
 .score-container {
-    height: 100vh; /* Make it full screen height */
+    height: 100vh; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,14 +9,13 @@
     padding-top: 4rem;
   }
   
-  /* Styling the quiz completed title */
+  
   .quiz-completed-title {
     font-size: 2rem;
     font-weight: bold;
-    color: #567C8D; /* Bootstrap primary color */
+    color: #567C8D; 
   }
   
-  /* Style for the score text */
   .score-text {
     font-size: 1.5rem;
     color: #333;
@@ -26,35 +24,32 @@
   .score-value {
     font-size: 2rem;
     font-weight: bold;
-    color: #2F4156; /* Green color for positive emphasis */
+    color: #2F4156; 
   }
   
-  /* Score image styling */
+ 
   .score-img {
     width: 20rem;
     height: auto;
     animation: pulse 2s infinite;
-    margin-bottom: 20px; /* Add a subtle pulse animation */
+    margin-bottom: 20px; 
   }
   
-  /* Animation for the score icon */
   @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
   }
   
-  /* Button styling */
   .explore-btn {
     font-size: 1.25rem;
     padding: 10px 20px;
     border-radius: 8px;
     color: #F5EFEB;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
   }
   
-  /* Button hover effect */
   .explore-btn:hover {
     background-color:  #F5EFEB; 
     color:#2F4156 ; 
@@ -67,7 +62,6 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
   }
   
-  /* Mobile responsiveness */
   @media (max-width: 768px) {
     .quiz-completed-title {
       font-size: 2rem;
@@ -85,29 +79,3 @@
       width: 120px;
     }
   }
-/* 
-
-  .start-button {
-    padding: 10px 20px; 
-    border: none; 
-    background-color: #F5EFEB; 
-    color: #2F4156; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    font-size: 1rem;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-  }
-  
-  .start-button:hover {
-    background-color: #2F4156; 
-    color: #F5EFEB; 
-    transform: translateY(-3px); 
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
-  }
-  
-  .start-button:active {
-    transform: translateY(0); 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-  }
-   */

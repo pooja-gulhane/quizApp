@@ -18,7 +18,7 @@ export class QuizHistoryComponent implements OnInit {
     console.log(userId);
 
     if(userId === 0) {
-      userId = 602
+      userId = 903
     }
     // Fetch quiz history data from the service
     this.quizHistoryService.getQuizHistory(userId).subscribe(

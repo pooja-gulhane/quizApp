@@ -61,7 +61,7 @@ export class QuestionService {
   submitUserResponses(currentAndNextResponseDTO:CurrentAndNextResponseDTO): Observable<any> {
     const headers = this.authService.getRequestHeaders()
 
-    const apiUrl = `http://localhost:8080/userResponses`;
+    const apiUrl = `http://localhost:8080/quiz/userResponses`;
     return this.http.post<any>(apiUrl,currentAndNextResponseDTO,{headers}).pipe(
       map(response=>{return {data:response}}),
       catchError(error => {

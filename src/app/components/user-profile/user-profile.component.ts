@@ -54,6 +54,10 @@ export class UserProfileComponent implements OnInit {
       this.userProfile.applicationUserPassword = this.newPassword;
     }
 
+    if(this.isUpdatingPassword === false) {
+      this.userProfile.applicationUserPassword = ''
+    }
+
     this.userProfileService.updateUserProfile(userId, this.userProfile).subscribe({
       next: (response) => {
         this.userProfile = response.data;

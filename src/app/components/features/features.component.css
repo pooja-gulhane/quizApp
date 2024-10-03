@@ -1,7 +1,6 @@
 .quiz-website {
     display: flex; 
     justify-content: center; 
-    /* align-items: start;  */
     margin-top: -60px; 
     background-color: #4d6b78;
     color: #f5efeb;
@@ -9,9 +8,7 @@
   }
   
   .left-part {
-    flex: 1;
-  /* max-width: 50%;  */
- 
+    flex: 1; 
   }
   
   .left-part img {
@@ -20,15 +17,14 @@
   
   .left-part img {
     margin-left: 60px;
-    opacity: 0; /* Initially hidden */
-    transform: translateX(-100%); /* Start off-screen to the left */
-    transition: opacity 1.2s ease-in, transform 1.2s ease-out; /* Smooth transition */
+    opacity: 0; 
+    transform: translateX(-100%); 
+    transition: opacity 1.2s ease-in, transform 1.2s ease-out; 
   }
   
-  /* When the image enters the viewport, it will slide in and fade in */
   .left-part.in-view img {
-    opacity: 1; /* Become visible */
-    transform: translateX(0); /* Move to its original position */
+    opacity: 1; 
+    transform: translateX(0); 
   }
   
 
@@ -36,16 +32,12 @@
     flex: 1; 
     margin-top: 13rem;
     max-width: 50%; 
-    /* padding-right: 70px; 
-    margin-bottom: 50px; */
   }
   
   .right-part h1 {
     font-size: 2rem; 
     font-weight: 700;
-   
-    /* margin-bottom: 10px;  */
-    
+      
   }
   
   .right-part p {

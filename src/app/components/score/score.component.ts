@@ -18,15 +18,13 @@ export class ScoreComponent implements OnInit {
   constructor(private scoreService: ScoreService,private route: ActivatedRoute, private quizService: QuizService) {}
 
   ngOnInit(): void {
-     // Retrieve quizId from the URL
      this.route.paramMap.subscribe(params => {
-      this.quizId = +params.get('quizId')!;  // Convert string to number
+      this.quizId = +params.get('quizId')!;  
       console.log("Quiz ID:", this.quizId);
 
-      // Fetch the total marks for the quiz
       this.quizService.getQuizDetails(this.quizId).subscribe(
         (quiz) => {
-          this.totalScore = quiz.quizTotalMarks; // Assuming totalMarks is a field in your response
+          this.totalScore = quiz.quizTotalMarks; 
 
         },
         (error) => {
@@ -35,7 +33,6 @@ export class ScoreComponent implements OnInit {
       );
     });
 
-    // Subscribe to score changes
     this.scoreService.score$.subscribe(score => {
       this.score = score;
     });
